@@ -2,6 +2,7 @@
 from functools import wraps
 import time
 
+
 def decorator_without_parameters(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -36,14 +37,12 @@ def timer(func):
     return wrapper
 
 
-
 @timer
 @decorator_with_parameters('My message before execution\n')
 def decorated_function():
     """Some documentation"""
     print('Execution of the function')
     return None
-
 
 
 if __name__ == '__main__':
